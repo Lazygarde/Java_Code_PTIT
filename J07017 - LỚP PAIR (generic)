@@ -3,10 +3,10 @@ import java.io.IOException;
 import java.util.Scanner;
 
 class Pair<T1, T2> {
-    int first;
-    int second;
+    T1 first;
+    T2 second;
 
-    Pair(int first, int second) {
+    Pair(T1 first, T2 second) {
         this.first = first;
         this.second = second;
     }
@@ -14,17 +14,18 @@ class Pair<T1, T2> {
     boolean nto(int n) {
         if (n < 2)
             return false;
-        for (int i = 2; i * i <= n; i++) 
-            if(n%i==0) return false;
+        for (int i = 2; i * i <= n; i++)
+            if (n % i == 0)
+                return false;
         return true;
     }
 
     boolean isPrime() {
-        if (nto(first) && nto(second))
+        if (nto((Integer) first) && nto((Integer) second))
             return true;
         return false;
     }
-    
+
     @Override
     public String toString() {
         return first + " " + second;
@@ -49,8 +50,8 @@ public class Lazygarde {
             if(!check) System.out.println(-1);
         }
     }
-    public static void main9473405(String[] args) throws IOException {
-        Scanner sc = new Scanner("DATA.in");
+    public static void main1753141(String[] args) throws IOException {
+        Scanner sc = new Scanner(new File("DATA.in"));
         int t = sc.nextInt();
         while (t-- > 0) {
             int n = sc.nextInt();
