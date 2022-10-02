@@ -1,0 +1,24 @@
+import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public class Lazygarde {
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner sc = new Scanner(new File("SONGUYEN.IN"));
+        Long s = 0L;
+        while (sc.hasNext()) {
+            String a = sc.next();
+            try {
+                Integer.parseInt(a);
+            } catch (NumberFormatException e) {
+                try{
+                    s += Long.parseLong(a);
+                } catch (NumberFormatException e1) {
+                    continue;
+                }
+            }
+        }
+        System.out.println(s);
+        sc.close();
+    }
+}
