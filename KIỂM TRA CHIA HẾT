@@ -1,0 +1,30 @@
+import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.math.BigInteger;
+
+public class Lazygarde {
+    public static boolean mod(BigInteger a, BigInteger b) {
+        return a.mod(b).equals(BigInteger.ZERO);
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner sc = new Scanner(new File("SONGUYEN.IN"));
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            BigInteger n = sc.nextBigInteger();
+            BigInteger a = new BigInteger("7");
+            BigInteger b = new BigInteger("13");
+            if (mod(n, a) == true && mod(n, b) == true) {
+                System.out.println("Both");
+            } else if (mod(n, a) == true) {
+                System.out.println("Div 7");
+            } else if (mod(n, b) == true) {
+                System.out.println("Div 13");
+            } else {
+                System.out.println("None");
+            }
+        }
+        sc.close();
+    }
+}
